@@ -1,0 +1,18 @@
+.setHeight{
+    height: 70vh;
+}
+
+.setContentHeight{
+    height: 45vh;
+}
+
+.notAllowed{
+    cursor: not-allowed;
+}
+
+.content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+}
