@@ -1,10 +1,10 @@
 import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
-import getPostMetadata from "../../../components/getPostMetadata";
+import getPostMetadata from "../../../components/posts/getPostMetadata";
 
 const getPostContent = (slug: string) => {
-  const folder = "posts/assets/";
+  const folder = "components/posts/assets/";
   const file = `${folder}${slug}.md`;
   const content = fs.readFileSync(file, "utf8");
   const matterResult = matter(content);

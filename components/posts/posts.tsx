@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import getPostMetadata from "../components/getPostMetadata";
-import PostPreview from "../components/PostPreview";
-import "./posts.css";
+import getPostMetadata from "./getPostMetadata";
+import PostPreview from "./PostPreview";
+import "./css/posts.css";
 
 const PostsListingPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +21,7 @@ const PostsListingPage = () => {
     fetchPostMetadata();
   }, []);
 
-  const postPerPage = 4;
+  const postPerPage = 6;
 
   // Calculate indexes of posts to display on the current page
   const indexOfLastPost = currentPage * postPerPage;

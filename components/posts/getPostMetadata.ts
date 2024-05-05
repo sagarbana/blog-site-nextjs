@@ -1,28 +1,16 @@
 'use server'
 import matter from "gray-matter";
 import fs from "fs";
-// import matter from "gray-matter";
-import { PostMetadata } from "../components/PostMetadata";
-import { GetServerSideProps } from "next";
-
-/* export const getServerSideProps: GetServerSideProps = async () => {
-  const fileExists = fs.existsSync("/some-file"); 
-
-  return {
-    props: {
-      doesFileExist: fileExists,
-    },
-  };
-}; */
+import { PostMetadata } from "./PostMetadata";
 
 const getPostMetadata = (): PostMetadata[] => {
-  const folder = "posts/assets";
+  const folder = "components/posts/assets";
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
   // Get gray-matter data from each file.
   const posts = markdownPosts.map((fileName) => {
-    const fileContents = fs.readFileSync(`posts/assets/${fileName}`, "utf8");
+    const fileContents = fs.readFileSync(`components/posts/assets/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
     return {
       title: matterResult.data.title,
