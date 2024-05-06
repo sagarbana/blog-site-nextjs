@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import getPostMetadata from "./getPostMetadata";
+import getPostMetadata from "./getPostMetadata.utils";
 import PostPreview from "./PostPreview";
-import "./css/posts.css";
+import "./posts.css";
 
 const PostsListingPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,7 +57,7 @@ const PostsListingPage = () => {
         <button
           onClick={nextPage}
           disabled={currentPage == lastPostPage}
-          className={currentPage == lastPostPage ? "notAllowed" : "text-white"}
+          className={currentPage == lastPostPage ? "notAllowed" : "text-grey"}
         >
           {" "}
           &nbsp;Next

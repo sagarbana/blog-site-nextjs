@@ -20,7 +20,7 @@ const createNewPost = (formData: {
         `"${formData.description}"`
     ].join("\n");
 
-    const filePath = path.join(process.cwd(), "components", "posts", "assets", fileName);
+    const filePath = path.join(process.cwd(), "assets", fileName);
 
     fs.writeFile(filePath, content, (res) => {
         console.log('File is written successfully');

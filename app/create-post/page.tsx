@@ -2,7 +2,7 @@
 
 import createNewPost from "@/components/posts/createPost";
 import React, { useState } from "react";
-import "./css/createPosts.css";
+import "./createPosts.css";
 
 const CreatePosts = ({ onClose }: any) => {
 
@@ -18,6 +18,7 @@ const CreatePosts = ({ onClose }: any) => {
         e.preventDefault();
         console.log(formData);
         createNewPost(formData);
+        window.location.reload();
         onClose();
     }
     return (
